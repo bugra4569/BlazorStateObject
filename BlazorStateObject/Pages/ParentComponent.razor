@@ -1,0 +1,24 @@
+﻿@inject ModelState state;
+
+<h3>ParentComponent</h3>
+<h1>@state.Totalsum</h1>
+<div class="row">
+    <div class="col-md-6">
+        <ChildComponent1 model="@state" onButtonClick="@(()=>Reset())"></ChildComponent1>
+    </div>
+    <div class="col-md-6">
+        <ChildComponent2 onbuttonClick="@(()=>AddNumber())" model="@state"></ChildComponent2>
+    </div>
+</div>
+
+@code {
+    async Task AddNumber()
+    {
+        state.AddNumber(1);
+    }
+    void Reset()
+    {
+        state.ResetSum();
+
+    }
+}

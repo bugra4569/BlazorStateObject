@@ -1,0 +1,9 @@
+﻿
+
+<h3>ChildComponent2</h3>
+@model.Totalsum
+<button class="btn btn-success" @onclick="onbuttonClick">AddOne</button>
+@code {
+    [Parameter] public ModelState model { get; set; }
+    [Parameter] public EventCallback onbuttonClick { get; set; }
+}
